@@ -1,4 +1,4 @@
-set(srcs stm32.cc stm32_flash.cc stm32_bootloader.cc stm32_bl.cc
+set(srcs src/stm32.cc src/stm32_flash.cc src/stm32_bootloader.cc src/stm32_bl.cc
 )
 set(platform_srcs
    esp32/mutex.cc esp32/stm32_uart.cc esp32/stm32_impl.cc esp32/stm32_flash.cc
@@ -37,3 +37,4 @@ add_library(stm32 STATIC ${srcs})
 target_include_directories(stm32 PUBLIC include PRIVATE priv_include)
 target_link_libraries(stm32 PRIVATE net utils_debug utils_misc)
 endif()
+
