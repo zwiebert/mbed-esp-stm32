@@ -4,10 +4,6 @@ menu "zwiebert: STM32"
       bool 
       default y
 
-    config STM32_USE_COMPONENT
-      bool 
-      default y
-
     config STM32_DEBUG
         bool "Enable stm32 component debug messages"
         default n

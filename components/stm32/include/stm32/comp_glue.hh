@@ -16,7 +16,7 @@
 #include <config_kvs/comp_settings.hh>
 #include <app_config/options.hh>
 
-#ifdef CONFIG_STM32_USE_COMPONENT
+#ifdef CONFIG_STM32_HAVE_COMPONENT
 
 inline cfg_stm32 *config_read_stm32(cfg_stm32 *cfg) {
   *cfg = cfg_stm32 { .uart_tx_gpio = CONFIG_STM32_UART_TX_PIN, .uart_rx_gpio = CONFIG_STM32_UART_RX_PIN, .boot_gpio_is_inverse =
@@ -49,7 +49,7 @@ inline void soCfg_STM32_BOOTGPIO_INV(class UoutWriter &td) {
  */
 template<typename settings_type>
 constexpr void stm32_register_settings(settings_type &settings) {
-#ifdef CONFIG_STM32_USE_COMPONENT
+#ifdef CONFIG_STM32_HAVE_COMPONENT
     settings.initField(CB_STM32_INV_BOOTPIN, "C_STM_INV_BP", otok::k_stm32_bootgpio_inv, CBT_i8, soCfg_STM32_BOOTGPIO_INV, STF_direct);
 #endif
 }
