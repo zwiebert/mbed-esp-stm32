@@ -19,9 +19,9 @@ public:
 Stm32_Bootloader(Stm32_Uart_if &stm32_uart): m_stm32_uart(stm32_uart) {
 }
 
-  /// \brief        send \link STM32_INIT \endlink
+  /// \brief        send @ref STM32_INIT 
   void stm32Bl_sendStart(void);
-  /// \brief        send a command to STM32 (\link stm32_cmd_T \endlin)
+  /// \brief        send a command to STM32 (@ref stm32_cmd_T \endlin)
   /// \param cmd    command to send
   void stm32Bl_sendCommand(stm32_cmd_T cmd);
   /// \brief        send an address
@@ -36,12 +36,12 @@ Stm32_Bootloader(Stm32_Uart_if &stm32_uart): m_stm32_uart(stm32_uart) {
    */
   int stm32Bl_recv(unsigned char *buf, int buf_size, int wait_ms);
 
-  /// \brief send \link STM32_INIT \endlink and check for \link STM32_ACK \endlink
+  /// \brief send @ref STM32_INIT  and check for @ref STM32_ACK 
   /// \return true if ACK was received
   bool stm32Bl_doStart(void);
-  /// \brief send \link STM32_GID \endlink and print result (debug)
+  /// \brief send @ref STM32_GID  and print result (debug)
   void stm32Bl_getId(void);
-  /// \brief send \link STM32_GET \endlink and print result (debug)
+  /// \brief send @ref STM32_GET  and print result (debug)
   void stm32Bl_get(void);
 
   bool stm32Bl_expect(stm32_cmd_T cmd, int wait_ms);
