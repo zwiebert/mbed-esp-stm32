@@ -26,7 +26,7 @@ idf_component_register(
     INCLUDE_DIRS include 
     PRIV_INCLUDE_DIRS priv_include 
     PRIV_REQUIRES net utils_debug utils_misc
-                  driver 
+                  esp_driver_uart esp_driver_gpio hal 
 )
 
 component_compile_options(${comp_compile_opts})
